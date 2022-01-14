@@ -42,13 +42,14 @@ lerna run build --scope="${PACKAGE_NAME}" --include-dependencies --stream 2>&1 |
 cd -
 
 (
-    mv "${BUILD_DIR}/${PACKAGE_PATH}" "${STAGE}" &&
-    mv "${BUILD_DIR}/.heroku" "${STAGE}/.heroku"
-    mv "${BUILD_DIR}/.profile.d" "${STAGE}/.profile.d"
-    rm -rf "${BUILD_DIR}"/* &&
-    mv "${STAGE}/$(basename "$PACKAGE_PATH")"/* "${BUILD_DIR}"
-    mv "${STAGE}/.heroku" "${BUILD_DIR}/.heroku"
-    mv "${STAGE}/.profile.d" "${BUILD_DIR}/.profile.d"
+    mv "${BUILD_DIR}/${PACKAGE_PATH}/Procfile" "${BUILD_DIR}/Procfile"
+#    mv "${BUILD_DIR}/${PACKAGE_PATH}" "${STAGE}" &&
+#    mv "${BUILD_DIR}/.heroku" "${STAGE}/.heroku"
+#    mv "${BUILD_DIR}/.profile.d" "${STAGE}/.profile.d"
+#    rm -rf "${BUILD_DIR}"/* &&
+#    mv "${STAGE}/$(basename "$PACKAGE_PATH")"/* "${BUILD_DIR}"
+#    mv "${STAGE}/.heroku" "${BUILD_DIR}/.heroku"
+#    mv "${STAGE}/.profile.d" "${BUILD_DIR}/.profile.d"
 )
 
 if [ $? -ne 0 ]; then
