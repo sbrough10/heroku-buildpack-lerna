@@ -34,10 +34,10 @@ header "Package information: ${PACKAGE_NAME} - ${PACKAGE_PATH}"
 cd "${BUILD_DIR}"
 
 header "Installing dependencies (lerna bootstrap)"
-npx lerna bootstrap --scope="${PACKAGE_NAME}" --include-dependencies 2>&1 | output
+npm run lernaInstall:prod 2>&1 | output
 
 header "Building ${PACKAGE_NAME} and its dependencies"
-npx lerna run build --scope="${PACKAGE_NAME}" --include-dependencies --stream 2>&1 | output
+npm run lernaBuild:prod 2>&1 | output
 
 cd -
 
