@@ -34,10 +34,10 @@ header "Package information: ${PACKAGE_NAME} - ${PACKAGE_PATH}"
 cd "${BUILD_DIR}"
 
 header "Installing dependencies (lerna bootstrap)"
-npm run lernaInstall:prod 2>&1 | output
+npm run lernaInstall 2>&1 | output
 
 header "Building ${PACKAGE_NAME} and its dependencies"
-npm run lernaBuild:prod 2>&1 | output
+npm run lernaBuild 2>&1 | output
 
 cd -
 
